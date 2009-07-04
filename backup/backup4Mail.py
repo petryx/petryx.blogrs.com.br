@@ -15,7 +15,7 @@ import re
 def sendMail(to, subject, text, files=[],server="localhost"):
     assert type(to)==list
     assert type(files)==list
-    fro = "Server Backup <bkserver@gmail.com>"
+    fro = "Server Backup <remetente@gmail.com>"
     msg = MIMEMultipart()
     msg['From'] = fro
     msg['To'] = COMMASPACE.join(to)
@@ -46,4 +46,4 @@ def backupTar(nameBackup,conf="/etc/backup"):
 
 name = 'backupSRV.tar.bz2' #nome do backup
 backupTar(name)
-sendMail(["marlonpetry@gmail.com"],"backup","backup",[name])
+sendMail(["destinatario@gmail.com"],"backup","backup",[name])

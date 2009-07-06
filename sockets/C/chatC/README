@@ -1,0 +1,13 @@
+Chat Server in C
+
+Compilation
+gcc -o chatserver server.c listaDDE.c -lpthread
+
+Using
+./chatserver
+
+In another terminal
+
+telnet 127.0.0.1 5800
+
+Have Fun :)

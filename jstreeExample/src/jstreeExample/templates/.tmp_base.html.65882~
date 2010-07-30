@@ -1,0 +1,11 @@
+{% extends 'layouts/layout_2_equal_columns.html' %}
+
+
+
+{% block 1 %}
+<div id="jstree"></div>
+{% endblock 1 %}
+
+{% block 2 %}
+Right Column
+{% endblock 2 %}

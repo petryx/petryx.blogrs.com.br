@@ -1,0 +1,47 @@
+{% extends 'layouts/layout_base.html' %}
+
+# This file should contain any override to the layout_base.html
+
+
+{% block css.shared %}
+     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/reset-fonts-grids/reset-fonts-grids.css">
+     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/base/base-min.css">
+{% endblock css.shared %}
+
+{% block js.shared %}
+    <script type="text/javascript" src="site_media/js/jquery.js"></script>
+	<script type="text/javascript" src="site_media/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="site_media/js/jquery.hotkeys.js"></script>
+	<script type="text/javascript" src="site_media/js/jquery.jstree.js"></script>
+
+<script language="JavaScript">
+
+
+$(function () {
+	$("#tree").jstree({ 
+		"json_data" : {
+			"ajax" : {
+				"url" : "/ajax/jstreeJson",
+				"data" : function (n) { 
+					return { id : n.attr ? n.attr("id") : 0 }; 
+				}
+			}
+		},
+		"plugins" : [ "themes", "json_data" ]
+	});
+	
+	$("#tree").jstree("set_theme","apple");
+});
+
+$("li").live("click", function(){
+	if (this.id != "")
+	{
+		
+		alert(this.id);
+		
+	}
+      	
+    });
+
+</script>
+{% endblock js.shared %}
